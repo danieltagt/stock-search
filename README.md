@@ -1,5 +1,7 @@
 # stock-search
-The project is a stock search engine that is build with Angular 2 and node.js
+The project is a stock search engine web app that is build with Angular 2 and node.js
+
+The stock data comes from yahoo finance.
 
 ##Getting Started
 Clone the repository using git
