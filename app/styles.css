@@ -1,0 +1,19 @@
+body {
+  padding: 30px;
+}
+
+.row {
+  padding-top: 10px;
+}
+
+.ng-touched.ng-invalid {
+  border: 1px solid red;
+}
+
+.spinner {
+  position: fixed;
+  top: 70%;
+  left: 50%;
+  margin-top: -50px;
+  margin-left: -100px;
+}
