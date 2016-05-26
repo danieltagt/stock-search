@@ -22,4 +22,4 @@ The project uses a simple web server. To start the server type
 ```
 npm start
 ```
-The browser should start but if its not browse to http://localhost:3000/
+The browser should start automatically but if it's not browse to http://localhost:3000/
