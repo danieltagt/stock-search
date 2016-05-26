@@ -12,7 +12,7 @@ import {Component, View} from 'angular2/core';
         <div class="col-xs-6 col-md-4">Low - High</div>
       </div>
       <hr>
-      <div *ngFor="#stock of stocks">
+      <div *ngFor="#stock of hack(stocks)">
         <div class="row">
           <strong><div class="col-xs-18 col-md-12">{{stock.Name}}</div></strong>
         </div>
@@ -26,4 +26,18 @@ import {Component, View} from 'angular2/core';
 })
 export class StockList {
   public stocks: Array<string>;
+
+  hack(stocks){
+    if(stocks == null){
+      return stocks;
+    }
+    if(stocks instanceof Array ) {
+      return stocks;
+    }
+
+    var array = []
+    array.push(stocks);
+    return array;
+  }
+
 }

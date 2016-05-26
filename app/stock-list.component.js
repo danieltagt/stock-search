@@ -21,13 +21,24 @@ System.register(['angular2/core'], function(exports_1, context_1) {
             StockList = (function () {
                 function StockList() {
                 }
+                StockList.prototype.hack = function (stocks) {
+                    if (stocks == null) {
+                        return stocks;
+                    }
+                    if (stocks instanceof Array) {
+                        return stocks;
+                    }
+                    var array = [];
+                    array.push(stocks);
+                    return array;
+                };
                 StockList = __decorate([
                     core_1.Component({
                         selector: 'stock-list',
                         inputs: ['stocks'],
                     }),
                     core_1.View({
-                        template: "\n      <div class=\"row\">\n        <div class=\"col-xs-6 col-md-4\">Stock</div>\n        <div class=\"col-xs-6 col-md-4\">Change</div>\n        <div class=\"col-xs-6 col-md-4\">Low - High</div>\n      </div>\n      <hr>\n      <div *ngFor=\"#stock of stocks\">\n        <div class=\"row\">\n          <strong><div class=\"col-xs-18 col-md-12\">{{stock.Name}}</div></strong>\n        </div>\n        <div class=\"row\">\n          <div class=\"col-xs-6 col-md-4\">{{stock.LastTradePriceOnly}}</div>\n          <div class=\"col-xs-6 col-md-4\">{{stock.Change}}</div>\n          <div class=\"col-xs-6 col-md-4\">{{stock.DaysRange}}</div>\n        </div>\n      </div>\n  ",
+                        template: "\n      <div class=\"row\">\n        <div class=\"col-xs-6 col-md-4\">Stock</div>\n        <div class=\"col-xs-6 col-md-4\">Change</div>\n        <div class=\"col-xs-6 col-md-4\">Low - High</div>\n      </div>\n      <hr>\n      <div *ngFor=\"#stock of hack(stocks)\">\n        <div class=\"row\">\n          <strong><div class=\"col-xs-18 col-md-12\">{{stock.Name}}</div></strong>\n        </div>\n        <div class=\"row\">\n          <div class=\"col-xs-6 col-md-4\">{{stock.LastTradePriceOnly}}</div>\n          <div class=\"col-xs-6 col-md-4\">{{stock.Change}}</div>\n          <div class=\"col-xs-6 col-md-4\">{{stock.DaysRange}}</div>\n        </div>\n      </div>\n  ",
                     }), 
                     __metadata('design:paramtypes', [])
                 ], StockList);
